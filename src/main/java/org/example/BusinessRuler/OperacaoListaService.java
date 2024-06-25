@@ -7,10 +7,9 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
-public class OperacaoLista {
+public class OperacaoListaService {
 
     public static void imiprimir(List<Funcionario> listaDeFuncionario){
         System.out.println("Nome | Data Nascimento | Salário | Função\n");
@@ -19,30 +18,30 @@ public class OperacaoLista {
         }
     }
 
-    public static void apagarFuncionario(List<Funcionario> listaDeFuncionario, String nome){
-        int index = 0;
+    public static int buscarIndex(List<Funcionario> listaDeFuncionario, String nome){
+        int index = -1;
         for(int i = 0; i< listaDeFuncionario.size(); i++){
             if(listaDeFuncionario.get(i).getNome().equals(nome)){
                 index = listaDeFuncionario.indexOf(listaDeFuncionario.get(i));
             }
         }
-        listaDeFuncionario.remove(index);
+        return index;
     }
-    public static void imiprimirOutDezAniversario(List<Funcionario> listaDeFuncionario){
-        System.out.println("Nome | Data Nascimento | Salário | Função\n");
+    public static List<Funcionario> funcionarioOutDezAniversario(List<Funcionario> listaDeFuncionario){
+        List<Funcionario> lista = new ArrayList<>();
         for(int i = 0; i< listaDeFuncionario.size(); i++){
             String dataDoFuncionario = listaDeFuncionario.get(i).getDataNascimento().
                     format(DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT));
             String [] dateParts = dataDoFuncionario.split("/");
             String month = dateParts[1];
             if(month.equals("10") ||month.equals("12")) {
-                System.out.println(listaDeFuncionario.get(i).toString());
+                lista.add(listaDeFuncionario.get(i));
             }
         }
+        return lista;
     }
 
-    public static void imprimirFuncionariomaiorIdade(List<Funcionario> listaDeFuncionario) {
-        System.out.println("Nome | Data Nascimento | Salário | Função\n");
+    public static Map<String, String> funcionariomaiorIdade(List<Funcionario> listaDeFuncionario) {
         int maioridade = 0;
         Funcionario funcionario = new Funcionario();
         for(int i = 0; i< listaDeFuncionario.size(); i++){
@@ -56,7 +55,9 @@ public class OperacaoLista {
                funcionario.setFuncao(listaDeFuncionario.get(i).getFuncao());
            }
         }
-        System.out.println(funcionario.toString());
+        Map<String, String> mapaDeMaiorIdade = new HashMap<>();
+        mapaDeMaiorIdade = MapCreation.maiorIdadeMapa(funcionario, String.valueOf(maioridade));
+        return mapaDeMaiorIdade;
     }
 
     public static void odenar(List<Funcionario> listaDeFuncionario){
