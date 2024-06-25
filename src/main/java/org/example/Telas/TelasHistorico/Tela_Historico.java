@@ -22,7 +22,7 @@ public class Tela_Historico extends JFrame implements ActionListener {
     public Tela_Historico(List<Funcionario> listaDeFuncionario, List<Historico> historicos)  {
         listaDeFuncionarioLocal.addAll(listaDeFuncionario);
         historicosLocal.addAll(historicos);
-        ImageIcon Icone = new ImageIcon(ClassLoader.getSystemResource("images/iniflexLogo.jpg"));
+        ImageIcon Icone = new ImageIcon(ClassLoader.getSystemResource("imagens/iniflexLogo.jpg"));
         setIconImage(Icone.getImage());
 
         getContentPane().setBackground(new Color(1, 170, 211));

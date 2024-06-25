@@ -15,10 +15,10 @@ public class OperacoesComSalario extends JFrame implements ActionListener {
     List<Funcionario> listaDeFuncionarioLocal = new ArrayList<>();
     List<Historico> historicosLocal = new ArrayList<>();
     public OperacoesComSalario(List<Funcionario> listaDeFuncionario, List<Historico> historicos){
-        ImageIcon Icone = new ImageIcon(ClassLoader.getSystemResource("images/iniflexLogo.jpg"));
+        ImageIcon Icone = new ImageIcon(ClassLoader.getSystemResource("imagens/iniflexLogo.jpg"));
         setIconImage(Icone.getImage());
 
-        ImageIcon bg = new ImageIcon(ClassLoader.getSystemResource("images/background.png"));
+        ImageIcon bg = new ImageIcon(ClassLoader.getSystemResource("imagens/background.png"));
         Image bg2 = bg.getImage().getScaledInstance(1120, 630, Image.SCALE_DEFAULT);
         ImageIcon bg3 = new ImageIcon(bg2);
         JLabel background = new JLabel(bg3);

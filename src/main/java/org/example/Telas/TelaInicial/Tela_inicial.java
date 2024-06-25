@@ -16,10 +16,10 @@ import java.util.List;
 public class Tela_inicial extends JFrame {
     public Tela_inicial(List<Funcionario> listaDeFuncionario, List<Historico> historicos) throws Exception {
 
-        ImageIcon Icone = new ImageIcon(ClassLoader.getSystemResource("images/iniflexLogo.jpg"));
+        ImageIcon Icone = new ImageIcon(ClassLoader.getSystemResource("imagens/iniflexLogo.jpg"));
         setIconImage(Icone.getImage());
 
-        ImageIcon bg = new ImageIcon(ClassLoader.getSystemResource("images/background.png"));
+        ImageIcon bg = new ImageIcon(ClassLoader.getSystemResource("imagens/background.png"));
         Image bg2 = bg.getImage().getScaledInstance(1120, 630, Image.SCALE_DEFAULT);
         ImageIcon bg3 = new ImageIcon(bg2);
         JLabel background = new JLabel(bg3);

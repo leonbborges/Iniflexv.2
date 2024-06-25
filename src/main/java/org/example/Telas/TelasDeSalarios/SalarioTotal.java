@@ -21,7 +21,7 @@ public class SalarioTotal extends JFrame implements ActionListener {
     public SalarioTotal(List<Funcionario> listaDeFuncionario, List<Historico> historicos){
         listaDeFuncionarioLocal.addAll(listaDeFuncionario);
         historicosLocal.addAll(historicos);
-        ImageIcon Icone = new ImageIcon(ClassLoader.getSystemResource("images/iniflexLogo.jpg"));
+        ImageIcon Icone = new ImageIcon(ClassLoader.getSystemResource("imagens/iniflexLogo.jpg"));
         setIconImage(Icone.getImage());
 
        setBackground(new Color(255,255,255));

@@ -29,7 +29,7 @@ public class RemoverFuncionario extends JFrame implements ActionListener {
     public RemoverFuncionario(List<Funcionario> listaDeFuncionario, List<Historico> historicos){
         listaDeFuncionarioLocal.addAll(listaDeFuncionario);
         historicosLocal.addAll(historicos);
-        ImageIcon Icone = new ImageIcon(ClassLoader.getSystemResource("images/iniflexLogo.jpg"));
+        ImageIcon Icone = new ImageIcon(ClassLoader.getSystemResource("imagens/iniflexLogo.jpg"));
         setIconImage(Icone.getImage());
 
         choiceEMP = new Choice();
